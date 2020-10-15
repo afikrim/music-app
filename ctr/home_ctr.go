@@ -7,7 +7,7 @@ import (
 )
 
 type HomeCTR struct {
-	Res     delivery.CustomJSON
+	Res     delivery.CustomJSONUtil
 	Payload model.Payload
 }
 

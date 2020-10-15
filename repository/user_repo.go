@@ -10,8 +10,8 @@ type UserRepoInterface interface {
 
 func (hr *UserRepo) FetchAll() ([]model.User, error) {
 	return []model.User{
-		{1, "Dave"},
-		{2, "Will"},
-		{3, "Henry"},
+		{"1", "Dave", 30},
+		{"2", "Will", 12},
+		{"3", "Henry", 11},
 	}, nil
 }
