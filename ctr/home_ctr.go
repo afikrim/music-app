@@ -6,15 +6,15 @@ import (
 	"net/http"
 )
 
-type Home struct {
+type HomeCTR struct {
 	Res     delivery.CustomJSON
 	Payload model.Payload
 }
 
-type HomeInterface interface {
-	Home(w http.ResponseWriter, r *http.Request)
+type HomeCTRInterface interface {
+	Welcome(w http.ResponseWriter, r *http.Request)
 }
 
-func (h *Home) Home(w http.ResponseWriter, r *http.Request) {
+func (h *HomeCTR) Welcome(w http.ResponseWriter, _ *http.Request) {
 	h.Res.CustomJSONRes(w, "Content-Type", "application/json", http.StatusOK, h.Payload.NewPayload("success", "", "welcome to api!"))
 }

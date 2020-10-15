@@ -6,7 +6,8 @@ import (
 )
 
 type Route struct {
-	HomeCTR ctr.Home
+	HomeCTR ctr.HomeCTR
+	UserCTR ctr.UserCTR
 }
 
 type RouteInterface interface {
@@ -16,7 +17,9 @@ type RouteInterface interface {
 func (r *Route) Routes() *mux.Router {
 	route := mux.NewRouter()
 
-	route.HandleFunc("/", r.HomeCTR.Home).Methods("GET")
+	route.HandleFunc("/", r.HomeCTR.Welcome).Methods("GET")
+
+	route.HandleFunc("/users", r.UserCTR.GetUsers).Methods("GET")
 
 	return route
 }
