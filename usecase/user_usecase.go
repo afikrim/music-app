@@ -19,16 +19,16 @@ func (uus *UserUseCase) FetchWithoutID() (interface{}, error) {
 	}
 
 	resultsWithoutID := []struct {
-		Name string
-		Age  int
+		Name string `json:"name"`
+		Age  int    `json:"age"`
 	}{
 		{},
 	}
 
 	for _, r := range result {
 		resultsWithoutID = append(resultsWithoutID, struct {
-			Name string
-			Age  int
+			Name string `json:"name"`
+			Age  int    `json:"age"`
 		}{Name: r.Name, Age: r.Age})
 	}
 
